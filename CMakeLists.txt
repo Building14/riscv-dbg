@@ -27,7 +27,6 @@ ip_sources(${IP} SYSTEMVERILOG
 )
 
 ip_link(${IP}
-    openhwgroup::pkg::obi_pkg
     pulp_platform::ip::common_cells
     pulp_platform::ip::tech_cells_generic
 )
