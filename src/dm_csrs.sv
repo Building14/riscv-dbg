@@ -583,6 +583,13 @@ module dm_csrs #(
 
   assign ndmreset_o = dmcontrol_q.ndmreset;
 
+  logic fifo_flush, fifo_flush1;
+
+  always_comb begin : bug_fix
+    fifo_flush = ~dmi_rst_ni;
+    fifo_flush1 = ~fifo_flush;
+  end
+
   // response FIFO
   fifo_v2 #(
     .dtype            ( logic [$bits(dmi_resp_o)-1:0] ),
@@ -590,7 +597,7 @@ module dm_csrs #(
   ) i_fifo (
     .clk_i,
     .rst_ni,
-    .flush_i          ( ~dmi_rst_ni          ), // Flush the queue if the DTM is
+    .flush_i          ( fifo_flush           ), // Flush the queue if the DTM is
                                                 // reset
     .testmode_i       ( testmode_i           ),
     .full_o           ( resp_queue_full      ),
