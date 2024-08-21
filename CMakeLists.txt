@@ -6,11 +6,14 @@
 cmake_minimum_required(VERSION 3.25)
 project(riscv_dbg NONE)
 
+# Fetch dependencies
+include("deps/deps.cmake")
+
 add_ip(riscv_dbg
     VENDOR pulp_platform
     LIBRARY ip
     VERSION 0.8.1
-    )
+)
 
 ip_sources(${IP} SYSTEMVERILOG
     ${PROJECT_SOURCE_DIR}/src/dm_pkg.sv
@@ -26,10 +29,7 @@ ip_sources(${IP} SYSTEMVERILOG
     ${PROJECT_SOURCE_DIR}/src/dm_sba.sv
 )
 
-ip_link(${IP}
-    pulp_platform::ip::common_cells
-    pulp_platform::ip::tech_cells_generic
-)
+ip_link(${IP} pulp_platform::ip::common_cells)
 
 if(NOT PROJECT_IS_TOP_LEVEL)
     set(RTL_LIB_NAME ${IP} PARENT_SCOPE)
