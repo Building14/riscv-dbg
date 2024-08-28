@@ -22,3 +22,9 @@ CPMAddPackage(
     GIT_TAG db47766
     GIT_REPOSITORY "https://github.com/HEP-SoC/common_cells.git"
 )
+
+CPMAddPackage(
+    NAME tech_cells_generic
+    GIT_TAG socmake
+    GIT_REPOSITORY "https://github.com/HEP-SoC/tech_cells_generic.git"
+)
