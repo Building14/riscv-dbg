@@ -19,7 +19,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/CPM.cmake)
 
 CPMAddPackage(
     NAME common_cells
-    GIT_TAG db47766
+    GIT_TAG MA_include_fix
     GIT_REPOSITORY "https://github.com/HEP-SoC/common_cells.git"
 )
 
