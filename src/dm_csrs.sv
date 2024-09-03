@@ -585,7 +585,7 @@ module dm_csrs #(
 
   // response FIFO
   fifo_v2 #(
-    .dtype            ( logic [$bits(dmi_resp_o)-1:0] ),
+    .DATA_WIDTH       ( $bits(dmi_resp_o) ),
     .DEPTH            ( 2                             )
   ) i_fifo (
     .clk_i,
