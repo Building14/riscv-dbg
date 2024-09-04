@@ -29,7 +29,10 @@ ip_sources(${IP} SYSTEMVERILOG
     ${PROJECT_SOURCE_DIR}/src/dm_sba.sv
 )
 
-ip_link(${IP} pulp_platform::ip::common_cells)
+ip_link(${IP}
+    pulp_platform::ip::tech_cells_generic
+    pulp_platform::ip::common_cells
+)
 
 if(NOT PROJECT_IS_TOP_LEVEL)
     set(RTL_LIB_NAME ${IP} PARENT_SCOPE)
