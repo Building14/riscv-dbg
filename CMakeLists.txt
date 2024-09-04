@@ -30,7 +30,7 @@ ip_sources(${IP} SYSTEMVERILOG
 )
 
 ip_link(${IP}
-    pulp_platform::ip::tech_cells_generic
+    lowrisc::ip::prim_cells
     pulp_platform::ip::common_cells
 )
 

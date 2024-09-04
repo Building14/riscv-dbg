@@ -24,7 +24,7 @@ CPMAddPackage(
 )
 
 CPMAddPackage(
-    NAME tech_cells_generic
-    GIT_TAG socmake
-    GIT_REPOSITORY "https://github.com/HEP-SoC/tech_cells_generic.git"
+    NAME prim_cells
+    GIT_TAG fpga_support
+    GIT_REPOSITORY "ssh://git@gitlab.cern.ch:7999/socrates/ip_blocks/prim_cells.git"
 )
