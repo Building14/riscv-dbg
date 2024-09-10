@@ -19,12 +19,12 @@ include(${CMAKE_CURRENT_LIST_DIR}/CPM.cmake)
 
 CPMAddPackage(
     NAME common_cells
-    GIT_TAG MA_include_fix
+    GIT_TAG v0.0.1
     GIT_REPOSITORY "https://github.com/HEP-SoC/common_cells.git"
 )
 
 CPMAddPackage(
     NAME prim_cells
-    GIT_TAG fpga_support
+    GIT_TAG v0.1.4
     GIT_REPOSITORY "ssh://git@gitlab.cern.ch:7999/socrates/ip_blocks/prim_cells.git"
 )
