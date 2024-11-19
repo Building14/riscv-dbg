@@ -11,6 +11,16 @@ include("deps/deps.cmake")
 
 add_ip(riscv_dbg
     VENDOR pulp_platform
+    LIBRARY pkg
+    VERSION 0.8.1
+)
+
+ip_sources(${IP} SYSTEMVERILOG
+    ${PROJECT_SOURCE_DIR}/src/dm_pkg.sv
+)
+
+add_ip(riscv_dbg
+    VENDOR pulp_platform
     LIBRARY ip
     VERSION 0.8.1
 )
@@ -30,6 +40,7 @@ ip_sources(${IP} SYSTEMVERILOG
 )
 
 ip_link(${IP}
+    pulp_platform::pkg::riscv_dbg
     lowrisc::ip::prim_cells
     pulp_platform::ip::common_cells
 )
