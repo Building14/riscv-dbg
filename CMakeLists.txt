@@ -12,7 +12,7 @@ include("deps/deps.cmake")
 add_ip(riscv_dbg
     VENDOR pulp_platform
     LIBRARY pkg
-    VERSION 0.8.1
+    VERSION 0.0.2
 )
 
 ip_sources(${IP} SYSTEMVERILOG
@@ -22,7 +22,7 @@ ip_sources(${IP} SYSTEMVERILOG
 add_ip(riscv_dbg
     VENDOR pulp_platform
     LIBRARY ip
-    VERSION 0.8.1
+    VERSION 0.0.2
 )
 
 ip_sources(${IP} SYSTEMVERILOG
