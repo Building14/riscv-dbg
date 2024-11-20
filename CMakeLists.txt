@@ -26,7 +26,6 @@ add_ip(riscv_dbg
 )
 
 ip_sources(${IP} SYSTEMVERILOG
-    ${PROJECT_SOURCE_DIR}/src/dm_pkg.sv
     ${PROJECT_SOURCE_DIR}/debug_rom/debug_rom.sv
     ${PROJECT_SOURCE_DIR}/debug_rom/debug_rom_one_scratch.sv
     ${PROJECT_SOURCE_DIR}/src/dm_csrs.sv
