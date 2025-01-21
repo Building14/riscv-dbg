@@ -3,26 +3,26 @@
 #
 # Please retain this header in all redistributions and modifications of the code.
 
+include(deps/deps.cmake)
 cmake_minimum_required(VERSION 3.25)
 project(riscv_dbg NONE)
 
-# Fetch dependencies
-include("deps/deps.cmake")
+set(RISCV_DBG_VERSION 0.0.10 CACHE INTERNAL "Version of the RISCV Debugger IP")
 
-add_ip(riscv_dbg
+add_ip(${PROJECT_NAME}
     VENDOR pulp_platform
     LIBRARY pkg
-    VERSION 0.0.2
+    VERSION ${RISCV_DBG_VERSION}
 )
 
 ip_sources(${IP} SYSTEMVERILOG
     ${PROJECT_SOURCE_DIR}/src/dm_pkg.sv
 )
 
-add_ip(riscv_dbg
+add_ip(${PROJECT_NAME}
     VENDOR pulp_platform
     LIBRARY ip
-    VERSION 0.0.2
+    VERSION ${RISCV_DBG_VERSION}
 )
 
 ip_sources(${IP} SYSTEMVERILOG
